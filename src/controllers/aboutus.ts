@@ -4,6 +4,7 @@ import aboutusModal from "../models/aboutus"
 export const getaboutus = async (req: Request, res: Response) => {
     try {
         const aboutus = await aboutusModal.find()
+
         if (!aboutus) {
             return res.send({
                 status: 200,
@@ -19,14 +20,14 @@ export const getaboutus = async (req: Request, res: Response) => {
 }
 export const getaboutusbyId = async (req: Request, res: Response) => {
     try {
-        const aboutus = await aboutusModal.findById({ id: req.params.id })
+        const aboutus = await aboutusModal.findById({ _id: req.params.id })
         if (!aboutus) {
             return res.send({
                 status: 200,
                 message: []
             })
         }
-        res.send({ aboutus })
+        res.send(aboutus)
     } catch (error) {
         res.status(500).json({
             message: "No access"

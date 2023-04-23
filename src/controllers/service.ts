@@ -3,7 +3,8 @@ import serviceModal from "../models/service"
 
 export const getservice = async (req: Request, res: Response) => {
     try {
-        const service = await serviceModal.find()
+        const service = await (await serviceModal.find()).reverse()
+
         if (!service) {
             return res.send({
                 status: 200,
@@ -19,14 +20,15 @@ export const getservice = async (req: Request, res: Response) => {
 }
 export const getservicebyId = async (req: Request, res: Response) => {
     try {
-        const service = await serviceModal.findById({ id: req.params.id })
+        const service = await serviceModal.findById({ _id: req.params.id })
         if (!service) {
             return res.send({
                 status: 200,
                 message: []
             })
         }
-        res.send({ service })
+
+        res.send(service)
     } catch (error) {
         res.status(500).json({
             message: "No access"
@@ -36,16 +38,16 @@ export const getservicebyId = async (req: Request, res: Response) => {
 
 export const createservice = async (req: Request, res: Response) => {
     try {
+
         const newservice = new serviceModal({
             title: req.body.title,
             text: req.body.text,
             img: req.body.img
-
         })
         await newservice.save();
         res.status(200).send({
             message: "service Created",
-            data: newservice
+            data: 'newservice'
         })
     } catch (error) {
         res.status(500).json({

@@ -19,14 +19,14 @@ export const getnews = async (req: Request, res: Response) => {
 }
 export const getnewsbyId = async (req: Request, res: Response) => {
     try {
-        const news = await newsModal.findById({ id: req.params.id })
+        const news = await newsModal.findById({ _id: req.params.id })
         if (!news) {
             return res.send({
                 status: 200,
                 message: []
             })
         }
-        res.send({ news })
+        res.send(news)
     } catch (error) {
         res.status(500).json({
             message: "No access"

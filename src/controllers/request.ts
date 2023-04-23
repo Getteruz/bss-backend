@@ -27,7 +27,7 @@ export const getrequestbyId = async (req: Request, res: Response) => {
                 message: 'Request is not found'
             })
         }
-        res.send({ request })
+        res.send(request)
     } catch (error) {
         res.status(500).json({
             message: "No access"

@@ -19,14 +19,14 @@ export const getobject = async (req: Request, res: Response) => {
 }
 export const getobjectbyId = async (req: Request, res: Response) => {
     try {
-        const object = await objectModal.findById({ id: req.params.id })
+        const object = await objectModal.findById({ _id: req.params.id })
         if (!object) {
             return res.send({
                 status: 200,
                 message: []
             })
         }
-        res.send({ object })
+        res.send(object)
     } catch (error) {
         res.status(500).json({
             message: "No access"
