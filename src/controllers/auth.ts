@@ -5,7 +5,6 @@ import { Request, Response } from "express";
 import UserModel from "../models/user"
 
 
-
 export const login = async (req: Request, res: Response) => {
     try {
         const user = await UserModel.findOne({ email: req.body.name, password: req.body.password })
@@ -27,7 +26,7 @@ export const login = async (req: Request, res: Response) => {
             }
         )
 
-        res.status(300).send({ user, token })
+        res.status(200).send({ user, token })
 
     } catch (error) {
         return res.status(400).send({

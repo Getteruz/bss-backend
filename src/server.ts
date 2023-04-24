@@ -8,6 +8,7 @@ import router from "./routes";
 
 const app = express();
 const mongodb: any = process.env.MONGO_ULR
+// mongoose.set('strictQuery', false)
 mongoose
     .connect(mongodb)
     .then(() => console.log("mongodb connected"))

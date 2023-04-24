@@ -2,6 +2,7 @@ import mongoose from "mongoose"
 
 interface IAboutUs {
     title: string;
+    name: string;
     text: string;
     text2: string;
     text3: string;
@@ -10,6 +11,10 @@ interface IAboutUs {
 const newsAboutUs = new mongoose.Schema<IAboutUs>(
     {
         title: {
+            type: String,
+            required: true,
+        },
+        name: {
             type: String,
             required: true,
         },
