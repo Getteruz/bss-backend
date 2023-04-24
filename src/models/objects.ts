@@ -27,7 +27,7 @@ const objectsSchema = new mongoose.Schema<IObjects>(
             default: 0,
         },
         tag: {
-            type: [String],
+            type: String,
             required: true,
         },
         data: {
