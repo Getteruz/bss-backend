@@ -31,7 +31,7 @@ const newsAboutUs = new mongoose.Schema<IAboutUs>(
             required: true,
         },
         img: {
-            type: [String],
+            type: [Object],
             required: true,
         },
     },

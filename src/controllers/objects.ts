@@ -36,9 +36,16 @@ export const getobjectbyId = async (req: Request, res: Response) => {
 
 export const createobject = async (req: Request, res: Response) => {
     try {
+
         const newobject = new objectModal({
-            title: req.body.title,
-            text: req.body.text,
+            uz_title: req.body.uz_title,
+            ru_title: req.body.ru_title,
+            en_title: req.body.en_title,
+            tr_title: req.body.tr_title,
+            uz_text: req.body.uz_text,
+            ru_text: req.body.ru_text,
+            en_text: req.body.en_text,
+            tr_text: req.body.tr_text,
             tag: req.body.tag,
             data: req.body.data,
             img: req.body.img
@@ -63,8 +70,14 @@ export const updateobject = async (req: Request, res: Response) => {
                 _id: req.params.id,
             },
             {
-                title: req.body.title,
-                text: req.body.text,
+                uz_title: req.body.uz_title,
+                ru_title: req.body.ru_title,
+                en_title: req.body.en_title,
+                tr_title: req.body.tr_title,
+                uz_text: req.body.uz_text,
+                ru_text: req.body.ru_text,
+                en_text: req.body.en_text,
+                tr_text: req.body.tr_text,
                 tag: req.body.tag,
                 data: req.body.data,
                 img: req.body.img
@@ -97,7 +110,7 @@ export const removeobject = async (req: any, res: Response) => {
                 }
                 if (!doc) {
                     return res.status(404).json({
-                        message: " object not found"
+                        message: "object not found"
                     })
                 }
                 res.status(200).send({

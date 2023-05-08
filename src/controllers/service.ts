@@ -3,7 +3,7 @@ import serviceModal from "../models/service"
 
 export const getservice = async (req: Request, res: Response) => {
     try {
-        const service = await (await serviceModal.find()).reverse()
+        const service = (await serviceModal.find()).reverse()
 
         if (!service) {
             return res.send({
@@ -40,8 +40,14 @@ export const createservice = async (req: Request, res: Response) => {
     try {
 
         const newservice = new serviceModal({
-            title: req.body.title,
-            text: req.body.text,
+            uz_title: req.body.uz_title,
+            ru_title: req.body.ru_title,
+            en_title: req.body.en_title,
+            tr_title: req.body.tr_title,
+            uz_text: req.body.uz_text,
+            ru_text: req.body.ru_text,
+            en_text: req.body.en_text,
+            tr_text: req.body.tr_text,
             img: req.body.img
         })
         await newservice.save();
@@ -64,8 +70,14 @@ export const updateservice = async (req: Request, res: Response) => {
                 _id: req.params.id,
             },
             {
-                title: req.body.title,
-                text: req.body.text,
+                uz_title: req.body.uz_title,
+                ru_title: req.body.ru_title,
+                en_title: req.body.en_title,
+                tr_title: req.body.tr_title,
+                uz_text: req.body.uz_text,
+                ru_text: req.body.ru_text,
+                en_text: req.body.en_text,
+                tr_text: req.body.tr_text,
                 img: req.body.img
             }
         )

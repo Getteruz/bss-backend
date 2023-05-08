@@ -58,8 +58,6 @@ export const createaboutus = async (req: Request, res: Response) => {
 }
 export const updateaboutus = async (req: Request, res: Response) => {
     try {
-
-
         await aboutusModal.findByIdAndUpdate(
             {
                 _id: req.params.id,
@@ -68,8 +66,8 @@ export const updateaboutus = async (req: Request, res: Response) => {
                 title: req.body.title,
                 name: req.body.name,
                 text: req.body.text,
-                tag: req.body.tag,
-                data: req.body.data,
+                text2: req.body.text2,
+                text3: req.body.text3,
                 img: req.body.img
             }
         )

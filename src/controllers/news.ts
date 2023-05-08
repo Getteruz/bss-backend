@@ -37,8 +37,14 @@ export const getnewsbyId = async (req: Request, res: Response) => {
 export const createnews = async (req: Request, res: Response) => {
     try {
         const newnews = new newsModal({
-            title: req.body.title,
-            text: req.body.text,
+            uz_title: req.body.uz_title,
+            ru_title: req.body.ru_title,
+            en_title: req.body.en_title,
+            tr_title: req.body.tr_title,
+            uz_text: req.body.uz_text,
+            ru_text: req.body.ru_text,
+            en_text: req.body.en_text,
+            tr_text: req.body.tr_text,
             tag: req.body.tag,
             data: req.body.data,
             img: req.body.img
@@ -63,8 +69,14 @@ export const updatenews = async (req: Request, res: Response) => {
                 _id: req.params.id,
             },
             {
-                title: req.body.title,
-                text: req.body.text,
+                uz_title: req.body.uz_title,
+                ru_title: req.body.ru_title,
+                en_title: req.body.en_title,
+                tr_title: req.body.tr_title,
+                uz_text: req.body.uz_text,
+                ru_text: req.body.ru_text,
+                en_text: req.body.en_text,
+                tr_text: req.body.tr_text,
                 tag: req.body.tag,
                 data: req.body.data,
                 img: req.body.img

@@ -1,4 +1,3 @@
-
 import * as dotenv from 'dotenv'
 dotenv.config()
 import express from "express";
@@ -8,7 +7,7 @@ import router from "./routes";
 
 const app = express();
 const mongodb: any = process.env.MONGO_ULR
-// mongoose.set('strictQuery', false)
+mongoose.set('strictQuery', true)
 mongoose
     .connect(mongodb)
     .then(() => console.log("mongodb connected"))
