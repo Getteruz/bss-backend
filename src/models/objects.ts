@@ -11,7 +11,10 @@ interface IObjects {
     tr_text: string;
     img: object;
     view: number;
-    tag: object,
+    uz_tag: object,
+    ru_tag: object,
+    en_tag: object,
+    tr_tag: object,
     data: string
 }
 const objectsSchema = new mongoose.Schema<IObjects>(
@@ -49,9 +52,21 @@ const objectsSchema = new mongoose.Schema<IObjects>(
             type: Number,
             default: 0,
         },
-        tag: {
+        uz_tag: {
             type: String,
-            required: true,
+
+        },
+        ru_tag: {
+            type: String,
+
+        },
+        en_tag: {
+            type: String,
+
+        },
+        tr_tag: {
+            type: String,
+
         },
         data: {
             type: String,

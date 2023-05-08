@@ -45,7 +45,10 @@ export const createnews = async (req: Request, res: Response) => {
             ru_text: req.body.ru_text,
             en_text: req.body.en_text,
             tr_text: req.body.tr_text,
-            tag: req.body.tag,
+            uz_tag: req.body.uz_tag,
+            ru_tag: req.body.ru_tag,
+            en_tag: req.body.en_tag,
+            tr_tag: req.body.tr_tag,
             data: req.body.data,
             img: req.body.img
         })
@@ -77,7 +80,10 @@ export const updatenews = async (req: Request, res: Response) => {
                 ru_text: req.body.ru_text,
                 en_text: req.body.en_text,
                 tr_text: req.body.tr_text,
-                tag: req.body.tag,
+                uz_tag: req.body.uz_tag,
+                ru_tag: req.body.ru_tag,
+                en_tag: req.body.en_tag,
+                tr_tag: req.body.tr_tag,
                 data: req.body.data,
                 img: req.body.img
             }

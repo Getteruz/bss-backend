@@ -11,7 +11,10 @@ interface INews {
     tr_text: string;
     img: object;
     view: number;
-    tag: string,
+    uz_tag: object,
+    ru_tag: object,
+    en_tag: object,
+    tr_tag: object,
     data: string
 }
 const newsSchema = new mongoose.Schema<INews>(
@@ -48,9 +51,21 @@ const newsSchema = new mongoose.Schema<INews>(
             type: Number,
             default: 0,
         },
-        tag: {
+        uz_tag: {
             type: String,
-            required: true,
+
+        },
+        ru_tag: {
+            type: String,
+
+        },
+        en_tag: {
+            type: String,
+
+        },
+        tr_tag: {
+            type: String,
+
         },
         data: {
             type: String,
