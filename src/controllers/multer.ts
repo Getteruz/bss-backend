@@ -1,6 +1,6 @@
 import { Response } from "express"
-import fs from 'fs'
-import path from "path"
+import * as fs from 'fs'
+import * as path from "path"
 
 export const multerfunc = async (req: any, res: Response) => {
     try {
@@ -18,6 +18,8 @@ export const multerfunc = async (req: any, res: Response) => {
 export const removefile = async (req: any, res: Response) => {
     try {
         const imgPath = req.body.path
+        console.log(path.resolve(process.cwd() + "\\" + imgPath));
+
         fs.unlink(path.resolve(process.cwd() + "\\" + imgPath), (err) => {
             if (err) console.log(err);
         });
