@@ -20,6 +20,7 @@ export const removefile = async (req: any, res: Response) => {
         fs.unlink(process.cwd() + path, (err) => {
             if (err) console.log(err);
         });
+        res.send('deleted')
 
     } catch (error) {
         res.status(500).json({
