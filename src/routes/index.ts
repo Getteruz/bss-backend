@@ -33,6 +33,7 @@ router
   .get('/user', userController.getuser)
   // multer
   .post('/multer', upload.single('image'), multerController.multerfunc)
+  .delete('/multer', multerController.removefile)
   //Request
   .get('/request', requestController.getrequest)
   .get('/request/:id', requestController.getrequestbyId)
