@@ -1,5 +1,6 @@
 import { Response } from "express"
 import fs from 'fs'
+import path from "path"
 
 export const multerfunc = async (req: any, res: Response) => {
     try {
@@ -16,8 +17,8 @@ export const multerfunc = async (req: any, res: Response) => {
 }
 export const removefile = async (req: any, res: Response) => {
     try {
-        const path = req.body.path
-        fs.unlink(process.cwd() + path, (err) => {
+        const imgPath = req.body.path
+        fs.unlink(path.resolve(process.cwd() + imgPath), (err) => {
             if (err) console.log(err);
         });
         res.send('deleted')
