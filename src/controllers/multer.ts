@@ -18,10 +18,10 @@ export const multerfunc = async (req: any, res: Response) => {
 export const removefile = async (req: any, res: Response) => {
     try {
         const imgPath = req.body.path
-        fs.unlink(path.resolve(process.cwd() + imgPath), (err) => {
+        fs.unlink(path.resolve(process.cwd() + "\\" + imgPath), (err) => {
             if (err) console.log(err);
         });
-        res.send('deleted')
+        res.status(200).send('deleted')
 
     } catch (error) {
         res.status(500).json({
